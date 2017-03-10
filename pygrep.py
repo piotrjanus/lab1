@@ -1,12 +1,12 @@
+import os.path
 class fileListMaker:
 	def __init__(self, path):
 		self.path = path
 		self.listOfFiles = []
 	def parseFilesNames(self):
 		import glob
-		self.listOfFiles = glob.glob(self.path)
+		self.listOfFiles = glob.glob(os.path.expanduser(self.path))
 	def validateFiles(self):
-		import os.path
 		for fname in self.listOfFiles:
 			if not os.path.isfile(fname):
 				print "file: "+ '\x1b[0;31;47m'+fname + '\x1b[0m' + " is not readable" 
@@ -23,7 +23,7 @@ class pygrep:
 	def writeToFile(self):
 		f_output = open('output.log', 'w')
 		for f in self.filesName:
-			f_output.write(f+"\n")
+			f_output.write("\n"+f+"\n")
 			for line in self.matched[f]:
 				f_output.write(line)
  
