@@ -13,8 +13,11 @@ class pywc:
 		self.words = {}
 		self.lines = {}
 		self.chars = {}
-		os.remove('pywc.log')
-		logging.basicConfig(filename='pywc.log',level=logging.INFO)
+		
+		fileLogName = 'pywc.log'
+		if os.path.exists(fileLogName):
+			os.remove(fileLogName)
+		logging.basicConfig(filename=fileLogName,level=logging.INFO)
 
 
 	def countInFiles(self):
