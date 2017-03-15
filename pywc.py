@@ -41,8 +41,11 @@ class pywc:
 def main():
 	temp_list = list(sys.argv)
 	del temp_list[0]
-	my_pywc = pywc(temp_list)
-	my_pywc.countInFiles()
+	if(len(temp_list)==0): 
+		print "no file given"
+	else:
+		my_pywc = pywc(temp_list)
+		my_pywc.countInFiles()
 
 
 if __name__ == '__main__':
