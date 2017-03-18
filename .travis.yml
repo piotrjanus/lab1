@@ -1,4 +1,4 @@
 language: python
 python:
   - "2.7"
-script: pywc_test.py
+script: python pywc_test.py
