@@ -6,3 +6,6 @@ install:
 script: 
   - python pywc_test.py
   - python pygrep_test.py
+notifications:
+  email: false
+
